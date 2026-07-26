@@ -25,6 +25,7 @@ class CarSearchForm(forms.Form):
         widget=forms.TextInput(attrs={"placeholder": "Enter Search Car"})
     )
 
+
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Driver
@@ -61,8 +62,11 @@ class ManufacturerSearchForm(forms.Form):
         max_length=255,
         required=False,
         label="",
-        widget=forms.TextInput(attrs={"placeholder": "Enter Name of the Manufacturer"})
+        widget=forms.TextInput(
+            attrs={"placeholder": "Enter Name of the Manufacturer"}
+        )
     )
+
 
 def validate_license_number(
     license_number,
